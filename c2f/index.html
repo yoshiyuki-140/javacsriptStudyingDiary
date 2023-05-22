@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .pad100 {
+            padding: 100px;
+            font-size: 60px;
+        }
+    </style>
+    <script>
+        function c2f(celsius) {
+            return f = (celsius - 32) * 5 / 9;
+        }
+        function convert() {
+            let c = document.getElementById("celsius").value;
+            let f = c2f(c);
+            let result = "摂氏:" + c + "度 " + "華氏:" + Math.floor(f) + "度";
+            document.getElementById("result").textContent = result;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1 class="pad100">convert selsius to fahrenheit</h1>
+    <input type="range" id="celsius" min="0" max="100" onchange="convert()">
+    <p id="result"></p>
+</body>
+
+</html>
